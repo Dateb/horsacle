@@ -3,11 +3,17 @@ import HorseRow from "./HorseRow";
 
 export default class ValueTable extends React.Component {
   render() {
+      const content = (
+          <ul>
+            {
+                this.props.horses.map((horse) =>
+                <li><HorseRow id={horse.id} win_prob={horse.win_prob}/></li>
+                )}
+          </ul>
+        );
     return (
         <div>
-          <HorseRow name="Heinz"/>
-          <HorseRow name="Karl"/>
-          <HorseRow name="Peter"/>
+            {content}
         </div>
     );
   }

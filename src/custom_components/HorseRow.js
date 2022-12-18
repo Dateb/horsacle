@@ -4,7 +4,7 @@ export default class HorseRow extends React.Component {
 
   render() {
     return (
-      <div>Horse name: {this.props.name}</div>
+      <div>{this.props.id}:{this.props.win_prob}</div>
     );
   }
 }
