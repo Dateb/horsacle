@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import ValueTable from  './custom_components/ValueTable'
 
 function App() {
   return (
     <div className="App">
+      <ValueTable />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
