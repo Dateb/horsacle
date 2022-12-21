@@ -1,6 +1,7 @@
 import React from "react"
 import HorseRow from "./HorseRow";
 import horse_data from "../data/horse_data.json"
+import "./table.css"
 
 export default class ValueTable extends React.Component {
     constructor(props) {
@@ -12,12 +13,14 @@ export default class ValueTable extends React.Component {
 
   render() {
       const content = (
-          <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Gewinnwahrscheinlichkeit %</th>
-                    <th>Mindestquote +EV</th>
-                </tr>
+          <table className="value-table">
+              <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Gewinnwahrscheinlichkeit %</th>
+                        <th>Mindestquote +EV</th>
+                    </tr>
+              </thead>
               <tbody>
               {
                 this.state.horses.map((horse) =>

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './horsacle_logo.jpg';
 import './App.css';
 import ValueTable from  './custom_components/ValueTable'
 
@@ -7,21 +7,13 @@ import ValueTable from  './custom_components/ValueTable'
 function App() {
   return (
     <div className="App">
-      <ValueTable />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <header className="App-header">
+            <h1>Horsacle: </h1>
+            <img src={logo} className="App-logo" alt="logo" />
+        </header>
+        <body>
+            <ValueTable />
+        </body>
     </div>
   );
 }
