@@ -6,8 +6,8 @@ export default class HorseRow extends React.Component {
     return (
       <tr>
           <td>{this.props.id}</td>
-          <td>{this.props.win_prob}</td>
-          <td>{this.props.value_thresh}</td>
+          <td>{this.props.win_probability}</td>
+          <td>{this.props.min_odds}</td>
       </tr>
     );
   }
