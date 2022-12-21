@@ -1,29 +1,23 @@
 import React from "react"
 import HorseRow from "./HorseRow";
-import horse_data from "../data/horse_data.json"
+import race_ev from "../data/race_ev.json"
 import "./table.css"
 
 export default class ValueTable extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            horses: horse_data
-        };
-    }
 
   render() {
       const content = (
           <table className="value-table">
               <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Gewinnwahrscheinlichkeit %</th>
-                        <th>Mindestquote +EV</th>
-                    </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Gewinnwahrscheinlichkeit %</th>
+                    <th>Mindestquote +EV</th>
+                </tr>
               </thead>
               <tbody>
               {
-                this.state.horses.map((horse) =>
+                this.props.horses.map((horse) =>
                 <HorseRow
                     id={horse.id}
                     win_probability={(horse.win_probability * 100).toFixed(2)}

@@ -1,6 +1,7 @@
 import logo from './horsacle_logo.jpg';
 import './App.css';
-import ValueTable from  './custom_components/ValueTable'
+import './TrackBox.css'
+import ValueContainer from "./custom_components/ValueContainer";
 
 
 
@@ -12,7 +13,7 @@ function App() {
             <img src={logo} className="App-logo" alt="logo" />
         </header>
         <body>
-            <ValueTable />
+            <ValueContainer />
         </body>
     </div>
   );

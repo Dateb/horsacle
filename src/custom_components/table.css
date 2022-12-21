@@ -2,7 +2,6 @@
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin-left: auto;
     margin-right: auto;
@@ -11,7 +10,7 @@
 .value-table thead tr {
     background-color: #009879;
     color: #ffffff;
-    text-align: left;
+    text-align: center;
 }
 
 .value-table th,
@@ -25,6 +24,10 @@
 
 .value-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
+}
+
+.value-table tbody tr:nth-of-type(odd) {
+    background-color: white;
 }
 
 .value-table tbody tr:last-of-type {
