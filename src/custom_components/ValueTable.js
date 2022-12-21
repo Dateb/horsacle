@@ -1,6 +1,5 @@
 import React from "react"
 import HorseRow from "./HorseRow";
-import race_ev from "../data/race_ev.json"
 import "./table.css"
 
 export default class ValueTable extends React.Component {
@@ -10,7 +9,9 @@ export default class ValueTable extends React.Component {
           <table className="value-table">
               <thead>
                 <tr>
+                    <th></th>
                     <th>ID</th>
+                    <th>Name</th>
                     <th>Gewinnwahrscheinlichkeit %</th>
                     <th>Mindestquote +EV</th>
                 </tr>
@@ -20,6 +21,7 @@ export default class ValueTable extends React.Component {
                 this.props.horses.map((horse) =>
                 <HorseRow
                     id={horse.id}
+                    name={horse.name}
                     win_probability={(horse.win_probability * 100).toFixed(2)}
                     min_odds={horse.min_odds.toFixed(2)}
                 />

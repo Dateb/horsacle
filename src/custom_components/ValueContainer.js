@@ -5,19 +5,14 @@ import ValueTable from "./ValueTable";
 import "./table.css"
 
 export default class ValueContainer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            race_ev: race_ev
-        };
-    }
 
   render() {
+      const race_link = "https://www.racebets.de/de/pferdewetten/race/details/id/" + race_ev.race.id
     return (
         <div>
-            <h1>{this.state.race_ev.race.name}</h1>
-            <h3>{this.state.race_ev.race.date_time}</h3>
-            <ValueTable horses={this.state.race_ev.horses}/>
+            <h1><a href={race_link}>{race_ev.race.name}</a></h1>
+            <h3>{race_ev.race.date_time}</h3>
+            <ValueTable horses={race_ev.horses}/>
         </div>
     );
   }
