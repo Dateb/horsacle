@@ -18,6 +18,7 @@ export default class ValueTable extends React.Component {
                         <div>Racebets.de Quote</div>
                         <div>(Empfohlener Kelly-Einsatz)</div>
                     </th>
+                    <th></th>
                 </tr>
               </thead>
               <tbody>

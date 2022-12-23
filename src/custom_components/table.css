@@ -1,3 +1,12 @@
+td > div {
+    height: 2vmax;
+}
+
+td > img {
+    height: 2vmax;
+}
+
+
 .value-table {
     margin-left: auto;
     margin-right: auto;
@@ -35,7 +44,7 @@
 }
 
 .horse-icon {
-    width: 40px
+    height: 2vmax;
 }
 
 .no-value-cell {
