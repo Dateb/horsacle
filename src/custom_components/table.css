@@ -1,10 +1,10 @@
 .value-table {
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .value-table thead tr {
@@ -36,5 +36,13 @@
 
 .horse-icon {
     width: 40px
+}
+
+.no-value-cell {
+    background-color: red;
+}
+
+.value-cell {
+    background-color: green;
 }
 

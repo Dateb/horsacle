@@ -9,7 +9,7 @@ export default class ValueContainer extends React.Component {
   render() {
       const race_link = "https://www.racebets.de/de/pferdewetten/race/details/id/" + race_ev.race.id
     return (
-        <div>
+        <div className="value-container bubble">
             <h1><a href={race_link}>{race_ev.race.name}</a></h1>
             <h3>{race_ev.race.date_time}</h3>
             <ValueTable horses={race_ev.horses}/>

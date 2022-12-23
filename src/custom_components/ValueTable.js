@@ -12,8 +12,12 @@ export default class ValueTable extends React.Component {
                     <th></th>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Gewinnwahrscheinlichkeit %</th>
+                    <th>Gewinnwahrscheinlichkeit</th>
                     <th>Mindestquote +EV</th>
+                    <th>
+                        <div>Racebets.de Quote</div>
+                        <div>(Empfohlener Kelly-Einsatz)</div>
+                    </th>
                 </tr>
               </thead>
               <tbody>
@@ -24,6 +28,8 @@ export default class ValueTable extends React.Component {
                     name={horse.name}
                     win_probability={(horse.win_probability * 100).toFixed(2)}
                     min_odds={horse.min_odds.toFixed(2)}
+                    racebets_odds={horse.racebets_odds}
+                    racebets_stakes={(horse.racebets_stakes * 100).toFixed(2)}
                 />
                 )}
               </tbody>

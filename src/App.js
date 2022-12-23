@@ -9,11 +9,11 @@ function App() {
   return (
     <div className="App">
         <header className="App-header">
-            <h1>Horsacle: </h1>
-            <img src={logo} className="App-logo" alt="logo" />
+            <h3>Horsacle</h3>
         </header>
         <body>
-            <ValueContainer />
+            <img src={logo} className="App-logo" alt="logo" />
+            <ValueContainer/>
         </body>
     </div>
   );
