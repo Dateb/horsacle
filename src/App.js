@@ -4,7 +4,6 @@ import './TrackBox.css'
 import ValueContainer from "./custom_components/ValueContainer";
 
 
-
 function App() {
   return (
     <div className="App">

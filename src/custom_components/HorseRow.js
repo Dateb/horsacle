@@ -7,6 +7,18 @@ import './table.css'
 
 export default class HorseRow extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            current_odds: props.min_odds_place
+        };
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({current_odds: event.target.value});
+    }
+
   render() {
       let race_bets_odds = <td>
               <div>
@@ -33,8 +45,16 @@ export default class HorseRow extends React.Component {
           <img src={horse_icon} className="horse-icon" alt="logo" />
           <td>{this.props.id}</td>
           <td>{this.props.name}</td>
-          <td>{this.props.win_probability}%</td>
-          <td>{this.props.min_odds}</td>
+          <td>{this.props.place_probability}%</td>
+          <td>
+              <form>
+                  <label>
+                    Gegebene Quote:
+                    <input type="text" placeholder={this.state.current_odds} value={this.state.value} onChange={this.handleChange}/>
+                  </label>
+              </form>
+              <div>Kelly-Einsatz: {this.state.current_odds}</div>
+          </td>
           {race_bets_odds}
           {status_img}
       </tr>
