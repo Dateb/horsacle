@@ -1,6 +1,6 @@
 import React from "react"
 import HorseRow from "./HorseRow";
-import "./table.css"
+import "../css/table.css"
 
 export default class ValueTable extends React.Component {
 
@@ -13,12 +13,13 @@ export default class ValueTable extends React.Component {
                     <th></th>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Gewinnwahrscheinlichkeit</th>
+                    <th>Mindestquote</th>
                     <th>Kelly-Einsatz für Quote</th>
                     <th>
                         <div><a href={race_link}>Racebets.de</a> Quote</div>
                         <div>(Empfohlener Kelly-Einsatz)</div>
                     </th>
+                    <th>Gewinnwahrscheinlichkeit</th>
                     <th></th>
                 </tr>
               </thead>
@@ -28,8 +29,8 @@ export default class ValueTable extends React.Component {
                 <HorseRow
                     id={horse.id}
                     name={horse.name}
-                    place_probability={(horse.place_probability * 100).toFixed(2)}
-                    min_odds_place={horse.min_odds_place.toFixed(2)}
+                    win_probability={(horse.win_probability * 100).toFixed(2)}
+                    min_odds={horse.min_odds.toFixed(2)}
                     racebets_odds={horse.racebets_odds}
                     racebets_stakes={(horse.racebets_stakes * 100).toFixed(2)}
                 />

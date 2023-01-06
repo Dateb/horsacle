@@ -3,14 +3,14 @@ import React from "react"
 import horse_icon from '../horse_icon.png';
 import green_light from "../green_light.png";
 import red_light from "../red_light.png"
-import './table.css'
+import '../css/table.css'
 
 export default class HorseRow extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            current_odds: props.min_odds_place
+            current_odds: props.min_odds
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -45,7 +45,7 @@ export default class HorseRow extends React.Component {
           <img src={horse_icon} className="horse-icon" alt="logo" />
           <td>{this.props.id}</td>
           <td>{this.props.name}</td>
-          <td>{this.props.place_probability}%</td>
+          <td>{this.props.min_odds}</td>
           <td>
               <form>
                   <label>
@@ -55,7 +55,8 @@ export default class HorseRow extends React.Component {
               </form>
               <div>Kelly-Einsatz: {this.state.current_odds}</div>
           </td>
-          {race_bets_odds}
+          <td>{race_bets_odds}</td>
+          <td>{this.props.win_probability}%</td>
           {status_img}
       </tr>
     );
