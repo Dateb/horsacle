@@ -13,17 +13,11 @@ export default class ValueContainer extends React.Component {
     }
 
     componentDidMount() {
-        setInterval(() => this.update_race_ev(),2000)
+        setInterval(() => this.update_race_ev(),6000)
     }
 
-    update_race_ev() {
-        fetch('race_ev.json'
-            ,{
-              headers : {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-               }
-            }).then(function(response) {
+    async update_race_ev() {
+        fetch('http://127.0.0.1:5000/next_race').then(function(response) {
                 return response.json();
             }).then(function(myJson) {
                 return myJson

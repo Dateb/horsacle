@@ -29,8 +29,8 @@ export default class ValueTable extends React.Component {
                 <HorseRow
                     id={horse.id}
                     name={horse.name}
-                    win_probability={(horse.win_probability * 100).toFixed(2)}
-                    min_odds={horse.min_odds.toFixed(2)}
+                    win_probability={horse.win_probability}
+                    min_odds={horse.min_odds}
                     racebets_odds={horse.racebets_odds}
                     racebets_stakes={(horse.racebets_stakes * 100).toFixed(2)}
                 />

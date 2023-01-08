@@ -10,13 +10,17 @@ export default class HorseRow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            current_odds: props.min_odds
+            current_odds: props.min_odds,
+            stakes: (props.min_odds * props.win_probability * 0.975 - 1) / (props.min_odds - 1)
         };
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
-        this.setState({current_odds: event.target.value});
+        this.setState({
+            current_odds: event.target.value,
+            stakes: (event.target.value * this.props.win_probability * 0.975 - 1) / (event.target.value - 1)
+        });
     }
 
   render() {
@@ -45,18 +49,18 @@ export default class HorseRow extends React.Component {
           <img src={horse_icon} className="horse-icon" alt="logo" />
           <td>{this.props.id}</td>
           <td>{this.props.name}</td>
-          <td>{this.props.min_odds}</td>
+          <td>{this.props.min_odds.toFixed(2)}</td>
           <td>
               <form>
                   <label>
                     Gegebene Quote:
-                    <input type="text" placeholder={this.state.current_odds} value={this.state.value} onChange={this.handleChange}/>
+                    <input type="text" placeholder={this.props.min_odds.toFixed(2)} value={this.state.value} onChange={this.handleChange}/>
                   </label>
               </form>
-              <div>Kelly-Einsatz: {this.state.current_odds}</div>
+              <div>Kelly-Einsatz: {this.state.stakes}</div>
           </td>
           <td>{race_bets_odds}</td>
-          <td>{this.props.win_probability}%</td>
+          <td>{(this.props.win_probability * 100).toFixed(2)}%</td>
           {status_img}
       </tr>
     );
