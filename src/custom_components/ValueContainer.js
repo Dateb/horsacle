@@ -9,43 +9,32 @@ export default class ValueContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            bets: []
         }
+
+        this.updateBets = this.updateBets.bind(this);
     }
 
-    componentDidMount() {
-        setInterval(() => this.update_race_ev(),6000)
-    }
-
-    async update_race_ev() {
+    updateBets() {
         fetch('http://127.0.0.1:5000/next_race').then(function(response) {
                 return response.json();
             }).then(function(myJson) {
+                console.log(myJson)
                 return myJson
-            }
-            ).then(result => this.setState({
-                race_name: result.race.name,
-                race_date_time: result.race.date_time,
-                race_time_until_start: result.race.time_until_start,
-                race: result.race,
-                horses: result.horses,
-            }
-        ))
+            }).then(result => this.setState({
+                bets: result,
+            })
+        )
     }
 
     render() {
-        console.log(this.state.race_name)
-        console.log(this.state.race_date_time)
-        console.log(this.state.horses)
-        console.log(this.state.race)
-        if (Object.keys(this.state).length === 0) {
-            return (<div>Loading...</div>)
-        }
+        const bets = this.state.bets.map((bet) =>
+            <div>{bet.horse_number}/{bet.horse_name}/{bet.stakes_fraction}/{bet.win_betting_odds}</div>
+        )
     return (
         <div className="value-container bubble">
-            <h1>{this.state.race_name}</h1>
-            <h3>{this.state.race_date_time}</h3>
-            <h3>{this.state.race_time_until_start}</h3>
-            <ValueTable horses={this.state.horses} race={this.state.race}/>
+            <button onClick={this.updateBets}>Aktualisiere Wettschein</button>
+            <div>{bets}</div>
         </div>
     );
   }

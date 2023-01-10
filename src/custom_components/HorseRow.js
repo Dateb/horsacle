@@ -19,7 +19,7 @@ export default class HorseRow extends React.Component {
     handleChange(event) {
         this.setState({
             current_odds: event.target.value,
-            stakes: (event.target.value * this.props.win_probability * 0.975 - 1) / (event.target.value - 1)
+            stakes: (event.target.value * this.props.win_probability * 0.975 - (1 + 0.1)) / (event.target.value - (1 + 0.1))
         });
     }
 
